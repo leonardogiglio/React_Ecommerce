@@ -7,3 +7,14 @@
   body{
     font-size: 18px;
   }
+
+  .App{
+    text-align: center;
+  }
+
+  .UserSection{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
