@@ -4,10 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import './ItemListContainer.css'
 import ItemCount from '../ItemCount/ItemCount';
 
-const ItemListContainer = ({nombre, descripcion, precio, img, stock}) => {
+const Item = ({data}) => {
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -15,22 +14,22 @@ const ItemListContainer = ({nombre, descripcion, precio, img, stock}) => {
         <CardMedia
           component="img"
           height="340"
-          image={img}
+          image={data.thumbnail}
           alt="Cinta de Correr"
-          stock={stock}
+          stock={data.available_quantity}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {nombre}
+          <Typography gutterBottom variant="h6" component="div">
+            {data.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {descripcion}
+            {data.seller.permalink}
           </Typography>
           <div className="Container">
           <Typography variant="body1" color="text.primary">
-            {precio}
+            $ {data.price}
           </Typography>
-          <ItemCount stock={stock}/>
+          <ItemCount stock={data.available_quantity}/>
           </div>
         </CardContent>
       </CardActionArea>
@@ -38,4 +37,4 @@ const ItemListContainer = ({nombre, descripcion, precio, img, stock}) => {
   );
 }
 
-export default ItemListContainer;
+export default Item;
