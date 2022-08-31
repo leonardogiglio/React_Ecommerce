@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
 
-const Item = ({data}) => {
+const Item = ({info}) => {
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -14,22 +14,22 @@ const Item = ({data}) => {
         <CardMedia
           component="img"
           height="340"
-          image={data.thumbnail}
+          image={info.img}
           alt="Cinta de Correr"
-          stock={data.available_quantity}
+          stock={info.stock}
         />
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
-            {data.title}
+            {info.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {data.seller.permalink}
+            {info.desc}
           </Typography>
           <div className="Container">
           <Typography variant="body1" color="text.primary">
-            $ {data.price}
+            $ {info.price}
           </Typography>
-          <ItemCount stock={data.available_quantity}/>
+          <ItemCount stock={info.stock}/>
           </div>
         </CardContent>
       </CardActionArea>

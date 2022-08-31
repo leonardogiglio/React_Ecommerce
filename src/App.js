@@ -4,12 +4,11 @@ import "popper.js/dist/umd/popper";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/NavBar/NavBar";
-import ItemList from "./components/ItemList/ItemList";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Greeting from "./components/Greeting/Greeting";
 import './App.css';
 
 function App() {
-
     return (
       <React.Fragment>
       <div className="App">
@@ -20,8 +19,8 @@ function App() {
           nombre="Carla"
           img="../assets/images/usuario.png"/>
       </div>
-      <div>
-      <ItemList />
+      <div className="UserSection">
+      <ItemListContainer />
       </div>
       </React.Fragment>
     );
