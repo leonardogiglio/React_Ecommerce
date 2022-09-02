@@ -4,8 +4,13 @@ export const cintas = [
       img: "../assets/images/ciron.jpeg",
       title: "Corplus. Iron",
       desc: "Cinta profesional con motor de corriente alterna de 3.8 HP, súper resistente.",
+      descLarg: "Cinta profesional en tres versiones, motor de 3.8 HP de corriente alterna, motor de 4.2 de corriente alterna y 4.5 HP de corriente continua. La cinta C#IRON AC+ es un modelo con la última tecnología enfocada en el cuidado de la salud y el cuerpo.",
       price: "$592.670",
       stock:"7",
+      datos: {
+        motor: ["3.8 corriente continua", "4.2 corriente continua", "4.5 corriente alterna"],
+        velocidad: ["16 KM/H", "20 KM/H", "24 KM/H"],
+      }, 
     },
     {
       id: 2,

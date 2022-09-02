@@ -7,22 +7,25 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Greeting from "./components/Greeting/Greeting";
 import './App.css';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
     return (
-      <React.Fragment>
-      <div className="App">
-        <NavBar />
-      </div>
-      <div className="Greeting">
-          <Greeting 
-          nombre="Carla"
-          img="../assets/images/usuario.png"/>
-      </div>
-      <div className="UserSection">
-      <ItemListContainer />
-      </div>
-      </React.Fragment>
+      // <React.Fragment>
+      // <div className="App">
+      //   <NavBar />
+      // </div>
+      // <div className="Greeting">
+      //     <Greeting 
+      //     nombre="Carla"
+      //     img="../assets/images/usuario.png"/>
+      // </div>
+      // <div className="UserSection">
+      // <ItemListContainer />
+      // </div>
+      // </React.Fragment>
+
+      <ItemDetailContainer />
     );
   }
   
