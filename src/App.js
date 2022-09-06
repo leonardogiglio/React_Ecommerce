@@ -1,31 +1,43 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "jquery";
 import "popper.js/dist/umd/popper";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
+
+//COMPONENTS
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Greeting from "./components/Greeting/Greeting";
-import './App.css';
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+
+
+//CSS
+import './App.css';
 
 function App() {
     return (
-      // <React.Fragment>
-      // <div className="App">
-      //   <NavBar />
-      // </div>
-      // <div className="Greeting">
-      //     <Greeting 
-      //     nombre="Carla"
-      //     img="../assets/images/usuario.png"/>
-      // </div>
-      // <div className="UserSection">
-      // <ItemListContainer />
-      // </div>
-      // </React.Fragment>
+      
+      <React.Fragment>
+        <Router>
+          <div className="App">
+            <NavBar />
+          </div>
+          <div className="Greeting">
+              <Greeting 
+              nombre="Carla"
+              img="../assets/images/usuario.png"/>
+          </div>
+          <Routes>
+          <Route path="/" element={<div className="UserSection"><ItemListContainer /></div>} />
+            <Route path="/categoria/:categoriaId" element={<div className="UserSection"><ItemListContainer /></div>} />
+            <Route path="/detalle/:detalleId" element={<ItemDetailContainer/>} />
 
-      <ItemDetailContainer />
+          </Routes>
+            
+        </Router>
+      </React.Fragment>
+      
     );
   }
   

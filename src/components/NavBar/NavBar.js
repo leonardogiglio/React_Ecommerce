@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CartWidget from "../CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
 import "../CartWidget/CartWidget.css"
+import "./NavBar.css"
 
 class NavBar extends Component {
   render() {
@@ -8,9 +10,7 @@ class NavBar extends Component {
       <React.Fragment>
         <nav class="navbar navbar-expand-lg bg-light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              Ecommerce
-            </a>
+            <NavLink class="navbar-brand" to="/">Ecommerce</NavLink>
             <button
               class="navbar-toggler"
               type="button"
@@ -25,42 +25,22 @@ class NavBar extends Component {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
+                  <NavLink class="nav-link" aria-current="page" to="/">Home</NavLink>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <NavLink class="nav-link" to="/categoria/cintas">
                     Cintas
-                  </a>
+                  </NavLink>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <NavLink class="nav-link" to="/categoria/indoor">
                     Indoor
-                  </a>
+                  </NavLink>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <NavLink class="nav-link" to="/categoria/elipticos">
                     Elípticos
-                  </a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Entrenamiento
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Gimnasio
-                      </a>
-                    </li>
-                  </ul>
+                  </NavLink>
                 </li>
               </ul>
               

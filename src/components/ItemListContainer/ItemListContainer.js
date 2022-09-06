@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
 import {cintas} from '../../data';
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = () => {
 
   const [data,setData] = useState([]);
+
+  const {categoriaId} = useParams();
 
   useEffect(() => {
     const getData = new Promise (resolve =>{
@@ -14,9 +16,13 @@ const ItemListContainer = () => {
         resolve (cintas);
       }, 2000);
     });
-    getData.then(res => setData(res));
+    if (categoriaId) {
+      getData.then(res => setData(res.filter(cintas => cintas.category === categoriaId)));
+    } else {
+      getData.then(res => setData(res));
+    }
 
-  }, [])
+  }, [categoriaId])
   
 
   return (

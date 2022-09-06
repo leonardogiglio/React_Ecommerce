@@ -6,7 +6,6 @@ import './ItemDetail.css';
 const ItemDetail = ({data}) => {
   return (
     <div>
-    <NavBar />
       <div className='Container'>
           <div className='Divider'>
             <div className='ImgContainer'>
@@ -16,7 +15,7 @@ const ItemDetail = ({data}) => {
               <h1 className='Title'>{data.title}</h1>
               <p className='Description'>{data.descLarg}</p>
               <span className='Price'>{data.price}</span>
-              <div className='FilterContainer'>
+              {/* <div className='FilterContainer'>
                 <div className='Filter'>
                 <span className='FilterTitle'>Motor: </span>
                 <select className='FilterSelect'>
@@ -34,7 +33,7 @@ const ItemDetail = ({data}) => {
                   <option className='FilterDesc'>24 Km/Hora</option>
                 </select>
                 </div>
-              </div>
+              </div> */}
 
               <div className='ButtonContainer'>
               <ItemCount stock={data.stock}/>

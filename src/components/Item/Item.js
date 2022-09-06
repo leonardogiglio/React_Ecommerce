@@ -5,10 +5,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 const Item = ({info}) => {
 
   return (
+    <Link to={`/detalle/${info.id}`}>
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
@@ -27,13 +29,14 @@ const Item = ({info}) => {
           </Typography>
           <div className="Container">
           <Typography variant="body1" color="text.primary">
-            $ {info.price}
+            {info.price}
           </Typography>
           <ItemCount stock={info.stock}/>
           </div>
         </CardContent>
       </CardActionArea>
     </Card>
+    </Link>
   );
 }
 
