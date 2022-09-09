@@ -57,25 +57,28 @@
     border: 1px solid rgb(186, 186, 186);
 }
 
-.Button{
+.ContenedorLink {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
     border-radius: 10px;
     padding: 10px 20px;
     border: 1px solid #198754;
-    color: #198754;
     cursor: pointer;
     font-size: 18px;
     font-weight: 400;
+    text-align: center;
+    width: 40%;
 }
 
-.Button:hover{
-    border: 1px solid #198754;
-    color: white;
+.ContenedorLink a{
+    color: #198754;
+}
+
+.ContenedorLink:hover {
     background-color: #198754;
 }
 
-.ButtonContainer{
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
-    margin-top: 80px;
+.ContenedorLink a:hover{
+    color: white;
 }

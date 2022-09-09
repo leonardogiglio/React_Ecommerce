@@ -41,3 +41,26 @@
     margin-top: 20px;
     align-items: center;
 }
+
+.Button{
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #198754;
+    color: #198754;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.Button:hover{
+    border: 1px solid #198754;
+    color: white;
+    background-color: #198754;
+}
+
+.ButtonContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    margin-top: 80px;
+}

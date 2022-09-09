@@ -31,7 +31,6 @@ const Item = ({info}) => {
           <Typography variant="body1" color="text.primary">
             {info.price}
           </Typography>
-          <ItemCount stock={info.stock}/>
           </div>
         </CardContent>
       </CardActionArea>

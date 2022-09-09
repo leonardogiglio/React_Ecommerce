@@ -2,17 +2,22 @@ import React, {useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 import {cintas} from '../../data';
 import { useParams } from 'react-router-dom';
+import Progress from '../Progress/Progress';
 
 
 const ItemListContainer = () => {
 
   const [data,setData] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const {categoriaId} = useParams();
 
   useEffect(() => {
     const getData = new Promise (resolve =>{
+      setIsLoading(true);
       setTimeout(() => {
+        setIsLoading(false);
         resolve (cintas);
       }, 2000);
     });
@@ -24,9 +29,11 @@ const ItemListContainer = () => {
 
   }, [categoriaId])
   
-
   return (
-   <ItemList data={data}/>
+    <>
+      {isLoading?  <Progress /> :  <ItemList data={data}/> }
+     
+    </>
   );
 }
 

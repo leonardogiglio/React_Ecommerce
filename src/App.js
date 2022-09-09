@@ -10,7 +10,7 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Greeting from "./components/Greeting/Greeting";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-
+import Cart from "./components/Cart/Cart";
 
 //CSS
 import './App.css';
@@ -27,11 +27,12 @@ function App() {
               <Greeting 
               nombre="Carla"
               img="../assets/images/usuario.png"/>
-          </div>
+          </div>     
           <Routes>
           <Route path="/" element={<div className="UserSection"><ItemListContainer /></div>} />
             <Route path="/categoria/:categoriaId" element={<div className="UserSection"><ItemListContainer /></div>} />
             <Route path="/detalle/:detalleId" element={<ItemDetailContainer/>} />
+            <Route path="/cart" element={<Cart/>} />
 
           </Routes>
             
