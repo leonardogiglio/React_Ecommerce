@@ -1,18 +1,18 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 html,
-body{
+body {
   font-size: 18px;
 }
 
-.App{
+.App {
   text-align: center;
 }
 
-.UserSection{
+.UserSection {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;

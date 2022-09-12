@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 const Progress = () => {
   const [progress, setProgress] = React.useState(0);
@@ -22,10 +22,10 @@ const Progress = () => {
   }, []);
 
   return (
-    <Box sx={{ width: '100%' , margin: '20px'}}>
+    <Box sx={{ width: "100%", margin: "20px" }}>
       <LinearProgress variant="determinate" value={progress} />
     </Box>
   );
-}
+};
 
 export default Progress;

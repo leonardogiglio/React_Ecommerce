@@ -1,30 +1,31 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount';
-import './ItemDetail.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/CartContext";
+import "./ItemDetail.css";
 
-const ItemDetail = ({data}) => {
-
+const ItemDetail = ({ data }) => {
   const [cart, setCart] = useState(false);
-  
-  const onAdd = () => {
-    setCart(true);
-  }
 
+  const { addItem } = useCartContext();
+
+  const onAdd = (quantity) => {
+    setCart(true);
+    addItem(data, quantity);
+  };
 
   return (
-   
     <div>
-      <div className='Container'>
-          <div className='Divider'>
-            <div className='ImgContainer'>
-              <img className='Img' src={data.img} />
-            </div>
-            <div className='InfoContainer'>
-              <h1 className='Title'>{data.title}</h1>
-              <p className='Description'>{data.descLarg}</p>
-              <span className='Price'>{data.price}</span>
-              {/* <div className='FilterContainer'>
+      <div className="Container">
+        <div className="Divider">
+          <div className="ImgContainer">
+            <img className="Img" src={data.img} alt="" />
+          </div>
+          <div className="InfoContainer">
+            <h1 className="Title">{data.title}</h1>
+            <p className="Description">{data.descLarg}</p>
+            <span className="Price">{data.price}</span>
+            {/* <div className='FilterContainer'>
                 <div className='Filter'>
                 <span className='FilterTitle'>Motor: </span>
                 <select className='FilterSelect'>
@@ -44,13 +45,18 @@ const ItemDetail = ({data}) => {
                 </div>
               </div> */}
 
-              {cart ? <div className="ContenedorLink"><Link to="/cart">Terminar Compra</Link></div> :  <ItemCount initial={0} stock={data.stock} onAdd={onAdd}/> }
-            
-            </div>
+            {cart ? (
+              <div className="ContenedorLink">
+                <Link to="/cart">Terminar Compra</Link>
+              </div>
+            ) : (
+              <ItemCount initial={0} stock={data.stock} onAdd={onAdd} />
+            )}
           </div>
+        </div>
       </div>
-      </div>
-  )
-}
+    </div>
+  );
+};
 
 export default ItemDetail;
