@@ -1,0 +1,19 @@
+.cartInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    height: 80px;
+    padding-left: 320px;
+    padding-right: 220px;
+}
+
+a{
+    text-decoration: none;
+    padding: 0;
+    color: #198754;
+}
+
+a:hover{
+    color: white;
+}

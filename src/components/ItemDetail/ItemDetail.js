@@ -24,7 +24,7 @@ const ItemDetail = ({ data }) => {
           <div className="InfoContainer">
             <h1 className="Title">{data.title}</h1>
             <p className="Description">{data.descLarg}</p>
-            <span className="Price">{data.price}</span>
+            <span className="Price">$ {data.price}</span>
             {/* <div className='FilterContainer'>
                 <div className='Filter'>
                 <span className='FilterTitle'>Motor: </span>
@@ -47,7 +47,7 @@ const ItemDetail = ({ data }) => {
 
             {cart ? (
               <div className="ContenedorLink">
-                <Link to="/cart">Terminar Compra</Link>
+                <Link to="/cart">Tramitar pedido</Link>
               </div>
             ) : (
               <ItemCount initial={0} stock={data.stock} onAdd={onAdd} />

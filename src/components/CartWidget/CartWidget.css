@@ -2,3 +2,12 @@
   margin-right: 40px;
   font-size: x-large;
 }
+
+.cartDivider{
+  display: flex;
+}
+
+.cartSpan{
+  font-size: 12px;
+  font-weight: 600;
+}

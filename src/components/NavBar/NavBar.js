@@ -63,7 +63,9 @@ class NavBar extends Component {
           </div>
           <div className="CartWidget">
             <i>
-              <CartWidget />
+              <NavLink className="nav-link" to="/cart">
+                <CartWidget />
+              </NavLink>
             </i>
           </div>
         </nav>
