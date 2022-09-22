@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Progress from "../Progress/Progress";
 import { useParams } from "react-router-dom";
-import { cintas } from "../../data";
 
 const ItemDetailContainer = () => {
   const [data, setData] = useState([]);
@@ -12,18 +12,16 @@ const ItemDetailContainer = () => {
   const { detalleId } = useParams();
 
   useEffect(() => {
-    const getData = new Promise((resolve) => {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-        resolve(cintas);
-      }, 2000);
-    });
-    getData.then((res) =>
-      setData(res.find((cintas) => cintas.id === parseInt(detalleId)))
-    );
-  }, []);
-
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    const querydb = getFirestore();
+    const querydoc = doc(querydb, "products", detalleId);
+    getDoc(querydoc)
+    .then(res => setData({id: res.id, ...res.data()}))
+  }, [detalleId]);
+  
   return <>{isLoading ? <Progress /> : <ItemDetail data={data} />}</>;
 };
 
