@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import ItemList from "../ItemList/ItemList";
-import { useParams } from "react-router-dom";
 import Progress from "../Progress/Progress";
 
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
-
-  const { categoriaId } = useParams();
 
         const getProducts = async () => {
           setIsLoading(true);

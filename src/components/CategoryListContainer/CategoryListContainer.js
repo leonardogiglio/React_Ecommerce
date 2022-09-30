@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { collection, query, getDocs, documentId, where } from "firebase/firestore";
+import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import ItemDetail from "../ItemDetail/ItemDetail";
 import Progress from "../Progress/Progress";
 import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
 
-const ItemDetailContainer = () => {
+const CategoryListContainer = () => {
   const [data, setData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const { detalleId } = useParams();
+  const { categoriaId } = useParams();
 
         const getProducts = async () => {
           setIsLoading(true);
-          const q = query(collection(db, "products"), where(documentId(), '==', detalleId));
+          const q = query(collection(db, "products"), where('category', '==', categoriaId));
           const docs = [];
           const querySnapshot = await getDocs(q);
           querySnapshot.forEach((doc)=>{
@@ -26,19 +26,9 @@ const ItemDetailContainer = () => {
 
       useEffect(() => {
        getProducts();
-      }, [detalleId]);
+      }, [categoriaId]);
   
-  return (
-    <div>
-      {isLoading ? (
-        <Progress /> 
-      ):(
-        data.map((data) => {
-          return <ItemDetail data={data} key={data.id}/>;
-        })
-      )}
-    </div>
-    );
+      return <>{isLoading ? <Progress /> : <ItemList data={data} />}</>;
 }
 
-export default ItemDetailContainer;
+export default CategoryListContainer;

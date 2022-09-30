@@ -1,0 +1,59 @@
+.ContainerForm{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url("https://firebasestorage.googleapis.com/v0/b/ecommerce-a5081.appspot.com/o/back.jpg?alt=media&token=512e877b-12bb-4588-9ac8-cff5e8d4d164")
+      center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DivisorForm{
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+}
+
+.TitleForm{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.Form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.InputForm{
+    flex: 1;
+    min-width: 40%;
+    border-radius: 6px;
+    border: .5px solid gray;
+    margin: 20px 10px 0 0;
+    padding: 10px;
+}
+
+.BtnForm{
+    width: 40%;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    border: 1px solid #198754;
+    background-color: white;
+    color: #198754;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+  
+.BtnForm:hover {
+    border: 1px solid #198754;
+    color: white;
+    background-color: #198754;
+  }

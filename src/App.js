@@ -8,10 +8,11 @@ import "bootstrap/dist/css/bootstrap.css";
 //COMPONENTS
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import Greeting from "./components/Greeting/Greeting";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./context/CartContext";
+import CategoryListContainer from "./components/CategoryListContainer/CategoryListContainer";
+import Form from "./components/Form/Form";
 
 //CSS
 import "./App.css";
@@ -24,9 +25,9 @@ function App() {
           <div className="App">
             <NavBar />
           </div>
-          <div className="Greeting">
+          {/* <div className="Greeting">
             <Greeting nombre="Carla" img="../assets/images/usuario.png" />
-          </div>
+          </div> */}
           <Routes>
             <Route
               path="/"
@@ -40,7 +41,7 @@ function App() {
               path="/categoria/:categoriaId"
               element={
                 <div className="UserSection">
-                  <ItemListContainer />
+                  <CategoryListContainer />
                 </div>
               }
             />
@@ -49,6 +50,7 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/form" element={<Form />} />
           </Routes>
         </CartProvider>
       </Router>

@@ -7,8 +7,6 @@ const ItemCart = ({product}) => {
 
     const { removeCart } = useCartContext();
 
-    const {cart, totalPrice} = useCartContext();
-
   return (
     <div className='container'>
         <div className='divider'>

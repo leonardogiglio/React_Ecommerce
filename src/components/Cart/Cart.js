@@ -17,7 +17,7 @@ const Cart = () => {
                 <div className='topTexts'>
                     <h5 className='topText'>Tu carrito está vacío</h5>
                 </div>
-                <button className='topButton'>Tramitar Pedido</button>
+                <button className='topButton'><Link to="/form">Tramitar Pedido</Link></button>
             </div>
       </>
     )
@@ -27,7 +27,7 @@ const Cart = () => {
       <h1 className='title'>Carrito</h1>
       <div className='top'>
                 <button className='topButton'><Link to="/">Continuar Comprando</Link></button>
-                <button className='topButton'>Tramitar Pedido</button>
+                <button className='topButton'><Link to="/form">Tramitar Pedido</Link></button>
             </div>
       {
         cart.map(product => <ItemCart key={product.id} product={product}/>)
