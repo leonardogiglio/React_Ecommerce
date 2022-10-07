@@ -4,6 +4,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import "./Form.css";
 import MessaggeSuccess from '../MessageSuccess/MessaggeSuccess';
+import { basicConfetti } from '../../utils/utils';
 
 
 const Form = () => {
@@ -38,6 +39,7 @@ const Form = () => {
     setOrdersID(docRef.id);
     setValues(orders);
     clearItem();
+    basicConfetti();
   }
 
   return (
