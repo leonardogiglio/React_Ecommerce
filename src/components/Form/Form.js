@@ -8,7 +8,7 @@ import MessaggeSuccess from '../MessageSuccess/MessaggeSuccess';
 
 const Form = () => {
 
-  const {cart, totalPrice} = useCartContext();
+  const {cart, totalPrice, clearItem} = useCartContext();
 
   const orders = {
     name: '',
@@ -37,6 +37,7 @@ const Form = () => {
     });
     setOrdersID(docRef.id);
     setValues(orders);
+    clearItem();
   }
 
   return (

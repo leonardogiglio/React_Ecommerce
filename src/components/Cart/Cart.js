@@ -3,6 +3,7 @@ import ItemCart from "../ItemCart/ItemCart";
 import { Link } from "react-router-dom";
 import { useCartContext } from '../../context/CartContext';
 import './Cart.css';
+import Footer from "../Footer/Footer";
 
 const Cart = () => {
 
@@ -36,6 +37,7 @@ const Cart = () => {
         <h5><b>Total:</b></h5>
         <h5> $ {totalPrice()}</h5>
         </div>
+        <Footer/>
     </>
   )
 };

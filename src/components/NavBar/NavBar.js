@@ -11,7 +11,7 @@ class NavBar extends Component {
         <nav className="navbar navbar-expand-lg bg-light">
           <div className="container-fluid">
             <NavLink className="navbar-brand" to="/">
-              Ecommerce
+              FitPoint
             </NavLink>
             <button
               className="navbar-toggler"
@@ -52,11 +52,11 @@ class NavBar extends Component {
                 <input
                   className="form-control me-2"
                   type="search"
-                  placeholder="Search"
+                  placeholder="Qué estás buscando?"
                   aria-label="Search"
                 />
                 <button className="btn btn-outline-success" type="submit">
-                  Search
+                  Buscar
                 </button>
               </form>
             </div>

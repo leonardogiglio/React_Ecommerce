@@ -3,6 +3,7 @@ import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import ItemList from "../ItemList/ItemList";
 import Progress from "../Progress/Progress";
+import Footer from "../Footer/Footer";
 
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
@@ -25,7 +26,7 @@ const ItemListContainer = () => {
        getProducts();
       }, []);
 
-  return <>{isLoading ? <Progress /> : <ItemList data={data} />}</>;
+  return <>{isLoading ? <Progress /> : <><ItemList data={data} /><Footer /></>}</>;
 };
 
 export default ItemListContainer;

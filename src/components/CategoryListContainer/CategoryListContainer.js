@@ -4,6 +4,7 @@ import { db } from "../../firebase/config";
 import Progress from "../Progress/Progress";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
+import Footer from "../Footer/Footer";
 
 const CategoryListContainer = () => {
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ const CategoryListContainer = () => {
        getProducts();
       }, [categoriaId]);
   
-      return <>{isLoading ? <Progress /> : <ItemList data={data} />}</>;
+      return <>{isLoading ? <Progress /> : <><ItemList data={data} /><Footer /></>}</>;
 }
 
 export default CategoryListContainer;

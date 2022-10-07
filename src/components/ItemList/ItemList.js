@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer/Footer";
 import Item from "../Item/Item";
 import "./ItemList.css";
 
@@ -8,6 +9,7 @@ const ItemList = ({ data = [] }) => {
       <Item key={cinta.id} info={cinta} />
     </div>
   ));
+  
 };
 
 export default ItemList;

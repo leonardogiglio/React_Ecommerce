@@ -16,6 +16,7 @@ import Form from "./components/Form/Form";
 
 //CSS
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
