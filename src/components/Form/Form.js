@@ -53,37 +53,43 @@ const Form = () => {
                     placeholder='nombre'
                     name='name'
                     value={values.name}
-                    onChange={handleOnChange}/>
+                    onChange={handleOnChange}
+                    required/>
                     <input 
                     className='InputForm' 
                     placeholder='apellido'
                     name='lastname'
                     value={values.lastname}
-                    onChange={handleOnChange}/>
+                    onChange={handleOnChange}
+                    required/>
                     <input 
                     className='InputForm'
                     placeholder='email'
                     name='email'
                     value={values.email}
-                    onChange={handleOnChange}/>
+                    onChange={handleOnChange}
+                    required/>
                     <input 
                     className='InputForm' 
                     placeholder='dirección'
                     name='direction'
                     value={values.direction}
-                    onChange={handleOnChange}/>
+                    onChange={handleOnChange}
+                    required/>
                     <input
                     className='InputForm' 
                     placeholder='ciudad'
                     name='city'
                     value={values.city}
-                    onChange={handleOnChange}/>
+                    onChange={handleOnChange}
+                    required/>
                     <input 
                     className='InputForm' 
                     placeholder='teléfono'
                     name='phone'
                     value={values.phone}
-                    onChange={handleOnChange}/>
+                    onChange={handleOnChange}
+                    required/>
                     <button 
                     className='BtnForm'
                     >Terminar Compra

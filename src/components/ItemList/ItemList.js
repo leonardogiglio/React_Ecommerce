@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../Footer/Footer";
 import Item from "../Item/Item";
 import "./ItemList.css";
 

@@ -16,7 +16,7 @@ import Form from "./components/Form/Form";
 
 //CSS
 import "./App.css";
-import Footer from "./components/Footer/Footer";
+import SearchDetailContainer from "./components/SearchDetailContainer/SearchDetailContainer";
 
 function App() {
   return (
@@ -26,9 +26,6 @@ function App() {
           <div className="App">
             <NavBar />
           </div>
-          {/* <div className="Greeting">
-            <Greeting nombre="Carla" img="../assets/images/usuario.png" />
-          </div> */}
           <Routes>
             <Route
               path="/"

@@ -1,11 +1,19 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 import "../CartWidget/CartWidget.css";
 import "./NavBar.css";
 
-class NavBar extends Component {
-  render() {
+
+const NavBar = () => {
+
+  const [search, setSearch] = useState('');
+
+  const searcher = (e) => {
+    setSearch(e.target.value);
+    console.log(e.target.value);
+  }
+
     return (
       <React.Fragment>
         <nav className="navbar navbar-expand-lg bg-light">
@@ -47,18 +55,6 @@ class NavBar extends Component {
                   </NavLink>
                 </li>
               </ul>
-
-              <form className="d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Qué estás buscando?"
-                  aria-label="Search"
-                />
-                <button className="btn btn-outline-success" type="submit">
-                  Buscar
-                </button>
-              </form>
             </div>
           </div>
           <div className="CartWidget">
@@ -72,6 +68,5 @@ class NavBar extends Component {
       </React.Fragment>
     );
   }
-}
 
 export default NavBar;

@@ -27,7 +27,7 @@ const Item = ({ info }) => {
             </Typography>
             <div className="Container">
               <Typography variant="body1" color="text.primary">
-                {info.price}
+                $ {info.price}
               </Typography>
             </div>
           </CardContent>
