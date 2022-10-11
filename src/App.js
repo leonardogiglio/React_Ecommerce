@@ -16,7 +16,6 @@ import Form from "./components/Form/Form";
 
 //CSS
 import "./App.css";
-import SearchDetailContainer from "./components/SearchDetailContainer/SearchDetailContainer";
 
 function App() {
   return (

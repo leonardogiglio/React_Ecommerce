@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 import "../CartWidget/CartWidget.css";
@@ -6,13 +6,6 @@ import "./NavBar.css";
 
 
 const NavBar = () => {
-
-  const [search, setSearch] = useState('');
-
-  const searcher = (e) => {
-    setSearch(e.target.value);
-    console.log(e.target.value);
-  }
 
     return (
       <React.Fragment>
